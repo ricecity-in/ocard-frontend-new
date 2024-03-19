@@ -190,12 +190,12 @@ const MyForm = () => {
           />
 
           <h3>Most Popular</h3>
-          <Input
+          {/* <Input
             type="text"
             placeholder="Email"
             value={email}
             onChange={handleEmailChange}
-          />
+          /> */}
           <Input
             type="text"
             placeholder="Website URL"

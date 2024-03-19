@@ -7,8 +7,8 @@ const ShareButton = ({id}) => {
       // Check if Web Share API is supported
       if (navigator.share) {
         await navigator.share({
-          title: 'Title of the shared content',
-          text: 'Description of the shared content',
+          title: 'Ocard.uk',
+          text: 'Digital Card',
           url: `https://my.ocard.uk/profile/${id}`,
         });
       } else {
