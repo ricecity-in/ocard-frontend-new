@@ -17,6 +17,7 @@ import { FaTwitter } from "react-icons/fa";
 import UserNotFound from "./UserNotFound";
 import "./Card.css";
 import ShareButton from "../Components.jsx/ShareButton";
+import { doLogout } from "../Auth";
 
 
 const CardForUser = (prop) => {
@@ -95,6 +96,14 @@ const CardForUser = (prop) => {
     }
   }
 
+  const handleClick = () => {
+    // Update the state when the button is clicked
+    doLogout();
+    navigate('/');
+
+    
+  };
+
   if (userNotFound) {
     return (
       <>
@@ -121,7 +130,7 @@ const CardForUser = (prop) => {
             <>
               <div className=" bg-slate-200 w-full">
               <div className="p-2 w-fit rounded-sm absolute right-0 top-0 ">
-                  <button className=" hover:bg-slate-400 text-black font-bold sm:py-2 sm:px-4 rounded">
+                  <button onClick={handleClick} className=" hover:bg-slate-400 text-black font-bold sm:py-2 sm:px-4 rounded">
                     Logout
                   </button>
                 </div>

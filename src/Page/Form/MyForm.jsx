@@ -106,7 +106,7 @@ const MyForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/admin/form",
+        "https://ocard-backend-new.vercel.app/api/admin/form",
         {
           name,
           user_profile,
