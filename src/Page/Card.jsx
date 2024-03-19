@@ -28,7 +28,7 @@ const Card = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/myform/${id}`
+          `https://ocard-backend-new.vercel.app/api/myform/${id}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");

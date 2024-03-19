@@ -40,7 +40,7 @@ const Edit = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/myform/${token}`
+          `https://ocard-backend-new.vercel.app/api/myform/${token}`
         ); // A
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -164,7 +164,7 @@ const Edit = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/form/${id}`,
+        `https://ocard-backend-new.vercel.app/api/form/${id}`,
         {
           name,
           user_profile,

@@ -19,7 +19,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/login", formData)
+    axios.post("https://ocard-backend-new.vercel.app/login", formData)
     .then(result=>{
         console.log("result.data: ", result.data)
         if(result.data.msg === "Success"){
