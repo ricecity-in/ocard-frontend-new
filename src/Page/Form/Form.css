@@ -1,0 +1,16 @@
+/* Form-specific styling */
+
+.custom-form {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 400px;
+    width: 80%;
+    padding: 40px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.custom-form h2 {
+    margin-bottom: 20px;
+}
