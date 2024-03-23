@@ -35,9 +35,11 @@ const Edit = () => {
   const [user_profile, setUserProfile] = useState("");
   const [user_icon, setUserIcon] = useState("");
   const [id, setId] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true)
       try {
         const response = await fetch(
           `https://ocard-backend-new.vercel.app/api/myform/${token}`
@@ -50,12 +52,15 @@ const Edit = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
       }
+      finally {
+        setLoading(false); // Set loading state to false after fetching data (whether successful or not)
+      }
     };
     fetchData();
   }, [token]);
 
 
-  console.log("formData: ",formData); //get all data
+  // console.log("formData: ",formData); //get all data
 
   useEffect(() => {
     // This useEffect will update the email state when formData changes
@@ -160,7 +165,8 @@ const Edit = () => {
   };
 
   const handleSubmit = async (e) => {
-    console.log("id: ", id);
+    // console.log("id: ", id);
+    setLoading(true)
     e.preventDefault();
     try {
       const response = await axios.put(
@@ -188,16 +194,22 @@ const Edit = () => {
         }
       );
       console.log("Data updated success:", response.data);
+      alert("Data Updated...")
+      setLoading(false)
       // Handle success, redirect user, etc.
     } catch (error) {
       if (error.response) {
         console.error("Error updating data:", error.response.data);
       }
+      setLoading(false); // Hide loader if submission fails
     }
   };
 
   return (
     <>
+    {loading &&  <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-white bg-opacity-75 z-50">
+      <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-20 w-20"></div>
+    </div>}
       {isLogin ? (
 
         <div>

@@ -127,24 +127,24 @@ const Card = () => {
               </div>
 
               <div className="flex flex-row justify-between pr-10 ml-4">
-                <div className="border-dotted border-l-2 border-sky-500 pl-8">
-                  <p className="text-4xl font-bold mb-3">{formData.name} </p>
-                  <p className="text-2xl font-semibold mb-1">{formData.title}</p>
-                  <p className="text-xl font-semibold">{formData.department}</p>
-                  <p className="text-l font-semibold mb-1 italic">{formData.company}</p>
-                </div>
+              <div className="border-dotted border-l-2 border-sky-500 pl-8">
+                    <p className="text-3xl sm:text-4xl font-bold mb-3">{formData.name} </p>
+                    <p className="text-xl sm:text-2xl font-semibold mb-1">{formData.title}</p>
+                    <p className="text-l font-semibold">{formData.department}</p>
+                    <p className=" text-sm font-semibold mb-1 italic">{formData.company}</p>
+                  </div>
 
                 <div className="">
-                  <img src={formData.user_icon} alt="icon" className=" w-[100px] h-auto" />
+                  <img src={formData.user_icon} alt="icon" className=" w-[100px] h-auto hidden sm:block" />
                 </div>
               </div>
 
               <p className="media-class">{formData.headline}</p>
 
-              <div className="contact-details">
+              <div className="contact-details ">
                 {formData.email ? (
                   <a href={"mailto:" + formData.email} className="custom-link">
-                    <div className="email-box">
+                    <div className="mobile-box py-3">
                       <div className="mobile-icon">
                         <MdEmail className="h-6 w-6 text-white" />
                       </div>
@@ -171,7 +171,8 @@ const Card = () => {
                 ) : (
                   ""
                 )}
-  {formData.whatsapp ? (
+                
+              {formData.whatsapp ? (
               <a
                 href={`https://wa.me/+91` + formData.whatsapp}
                 className="custom-link"
